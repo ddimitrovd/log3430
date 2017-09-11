@@ -14,24 +14,43 @@ public class TestGraphGenerator {
 		int V = 2;
 		int E = 1;
 		Graph testGraph = GraphGenerator.simple(V, E);
-		assertEquals("Simple vertex number is correct", V, testGraph.V());
-		assertEquals("Simple edge number is correct", E, testGraph.E());
+		//Testing Type
 		assertEquals("Simple type is correct","simple", testGraph.getTypeName());
+		// Testing V/E count
+		assertEquals("Simple vertex number is correct", V, testGraph.V());
+		assertEquals("Simple edge number is correct", E, testGraph.E());	
 	}
 
 	@Test
 	public void testSimpleIntDouble() {
-		fail("Not yet implemented");
+		int V = 5;
+		double P = 0.66;
+		Graph testGraph = GraphGenerator.simple(V, P);
+		//Testing Type
+		assertEquals("Simple Erdos-Renyi type is correct","simple", testGraph.getTypeName());
+		// Testing V/E count
+		assertEquals("Simple Erdos-Renyi vertex number is correct", V, testGraph.V());
 	}
 
 	@Test
 	public void testComplete() {
-		fail("Not yet implemented");
+		int V = 11;
+		Graph testGraph = GraphGenerator.complete(V);
+		//Testing Type
+		assertEquals("Complete type is correct","complete", testGraph.getTypeName());
+		// Testing V/E count
+		assertEquals("Complete vertex number is correct", V, testGraph.V());
 	}
 
 	@Test
 	public void testCompleteBipartite() {
-		fail("Not yet implemented");
+		int V1 = 11;
+		int V2 = 2;
+		Graph testGraph = GraphGenerator.completeBipartite(V1,V2);
+		//Testing Type
+		assertEquals("Complete Bipartite type is correct","completeBipartite", testGraph.getTypeName());
+		// Testing V/E count
+		assertEquals("Complete Bipartite vertex number is correct", V1 + V2, testGraph.V());
 	}
 
 	@Test
